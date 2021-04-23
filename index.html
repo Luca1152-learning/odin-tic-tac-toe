@@ -4,15 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
     <title>Tic Tac Toe</title>
   </head>
 
   <body>
     <main>
-        <section id="board-container"></section>
+      <span id="current-turn">
+        <span>CURRENT TURN: </span>
+        <span id="current-turn-symbol"></span>
+      </span>
+
+      <section id="board-container" class="noselect"></section>
     </main>
   </body>
 
-  <script src="index.js"></script>
+  <script src="javascripts/index.js"></script>
 </html>
