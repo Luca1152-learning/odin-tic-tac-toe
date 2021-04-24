@@ -4,9 +4,28 @@ html {
   font-family: "Open Sans";
 }
 
-#current-turn {
-  cursor: default;
+#game {
   font-size: 0.8rem;
+  text-align: center;
+  width: 12rem;
+}
+
+#game #current-turn {
+  cursor: default;
+  width: 100%;
+}
+
+#game #winner-text {
+  display: none;
+}
+
+#game #draw-text {
+  display: none;
+}
+
+#game #restart-button {
+  display: none;
+  margin: auto;
 }
 
 .noselect {

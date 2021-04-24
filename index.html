@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-    <title>Tic Tac Toe</title>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+		<title>Tic Tac Toe</title>
+	</head>
 
-  <body>
-    <main>
-      <span id="current-turn">
-        <span>CURRENT TURN: </span>
-        <span id="current-turn-symbol"></span>
-      </span>
+	<body>
+		<main>
+			<div id="game" class="noselect">
+				<div id="current-turn">
+					<span>CURRENT TURN: </span>
+					<span id="current-turn-symbol"></span>
+				</div>
+				<div id="winner-text">
+					<span id="winner-symbol"></span>
+					<span> WON!</span>
+				</div>
+        <div id="draw-text">
+          It's a draw!
+        </div>
+				<button id="restart-button">Restart</button>
 
-      <section id="board-container" class="noselect"></section>
-    </main>
-  </body>
+				<section id="board-container"></section>
+			</div>
+		</main>
+	</body>
 
-  <script src="javascripts/index.js"></script>
+	<script src="javascripts/index.js"></script>
 </html>
