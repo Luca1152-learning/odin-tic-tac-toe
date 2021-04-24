@@ -28,7 +28,7 @@ const gameBoard = (() => {
 	}
 
 	// Draw the game in the HTML page
-	const draw = (currentPlayer, turnEndedCallback) => {
+	const draw = (currentPlayer, turnEndedCallback, gameEnded) => {
 		const boardContainer = document.getElementById("board-container")
 
 		// If the table was already drawn, remove it
@@ -49,7 +49,7 @@ const gameBoard = (() => {
 				boardTableRow.appendChild(boardTableCell)
 
 				// This cell is empty
-				if (!cell) {
+				if (!cell && !gameEnded) {
 					// Adjust the cursor & background-color when hovering
 					boardTableCell.addEventListener("mouseenter", () => {
 						boardTableCell.style.cursor = "pointer"
@@ -167,10 +167,13 @@ const Game = (() => {
 
 	const play = () => {
 		_drawCurrentPlayerText()
-		gameBoard.draw(currentPlayer, turnEndedCallback)
 		const winner = gameBoard.getWinner()
-		const isTableFull = gameBoard.isTableFull()
+    const isTableFull = gameBoard.isTableFull()
 		const isDraw = !winner && isTableFull
+    const gameEnded = winner || isDraw
+		gameBoard.draw(currentPlayer, turnEndedCallback, gameEnded)
+
+
 
 		// The game ended
 		if (winner || gameBoard.isTableFull()) {
